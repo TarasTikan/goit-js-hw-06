@@ -12,3 +12,17 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const listGaleryEl = document.querySelector('.gallery')
+listGaleryEl.classList.add('flexbox')
+const makeImgConvert = img =>{
+const {url, alt} = img
+  return `<li>
+  <img src=${url} alt=${alt} width = 300px>
+  </li>`
+}
+
+const makeImg = images.map(makeImgConvert).join('')
+listGaleryEl.insertAdjacentHTML('beforeend', makeImg)
+
+console.log(makeImg)
